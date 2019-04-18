@@ -117,15 +117,15 @@ function rFib(n, cache = {}) {
   if (cache[n]) {
     return cache[n];
   }
-  cache[n] = rFib(n - 1) + rFib(n - 2);
+  cache[n] = rFib(n - 1, cache) + rFib(n - 2, cache);
 
   return cache[n];
 }
 
-// console.log(rFib(40));
+console.log(rFib(40));
 
 
-// console.log(`called rfib ${count} times`);
+console.log(`called rfib ${count} times`);
 
 
 
